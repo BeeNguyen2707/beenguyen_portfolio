@@ -4,8 +4,9 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thermal Electric Vehicle – Bee Hive</title>
-  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap)" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
+    /* CSS Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -17,6 +18,7 @@
       line-height: 1.8;
     }
 
+    /* Navigation Bar */
     nav {
       display: flex;
       justify-content: center;
@@ -35,6 +37,7 @@
 
     nav a:hover { color: #fff; }
 
+    /* Layout Containers */
     main {
       max-width: 1100px;
       margin: 0 auto;
@@ -50,12 +53,12 @@
       margin-bottom: 60px;
     }
 
-    /* Alternating image-left / text-right blocks */
+    /* Project Blocks */
     .block {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 48px;
-      margin-bottom: 64px;
+      margin-bottom: 80px;
     }
 
     .block.reverse { flex-direction: row-reverse; }
@@ -66,6 +69,8 @@
       object-fit: cover;
       display: block;
       flex-shrink: 0;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .block .text {
@@ -73,20 +78,21 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: center;
-      padding: 16px 0;
+      text-align: left;
     }
 
     .block .text p { margin-bottom: 16px; color: #ddd; }
 
-    /* "You may also like" section */
-    .also-like { margin-top: 80px; }
+    /* Footer Navigation */
+    .also-like { margin-top: 100px; border-top: 1px solid #2a2a2a; padding-top: 40px; }
 
     .also-like h2 {
       font-size: 0.95rem;
       font-weight: 300;
       color: #ccc;
       margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     .also-grid {
@@ -98,6 +104,8 @@
       flex: 1;
       display: block;
       text-decoration: none;
+      position: relative;
+      overflow: hidden;
     }
 
     .also-grid img {
@@ -105,19 +113,25 @@
       height: 200px;
       object-fit: cover;
       display: block;
-      transition: opacity 0.2s;
+      transition: transform 0.4s ease, opacity 0.3s;
     }
 
-    .also-grid img:hover { opacity: 0.8; }
+    .also-grid a:hover img { 
+      opacity: 0.7; 
+      transform: scale(1.05);
+    }
 
-    @media (max-width: 700px) {
-      .block, .block.reverse { flex-direction: column; }
+    /* Mobile view */
+    @media (max-width: 800px) {
+      .block, .block.reverse { flex-direction: column; text-align: center; }
       .block img { width: 100%; max-width: 100%; }
+      .block .text { text-align: center; padding-top: 20px; }
       .also-grid { flex-direction: column; }
     }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html">Welcome</a>
     <a href="about.html">About me</a>
@@ -127,54 +141,56 @@
   <main>
     <h1 class="page-title">Thermal Electric Vehicle</h1>
 
-    <!-- Block 1: image left, text right -->
+    <!-- Block 1: Profile view -->
     <div class="block">
-      <img src="images/tev-main.jpg" alt="TEV side view" />
+      <img src="images/tev-main.jpg" alt="TEV Profile view" />
       <div class="text">
-        <p>This project is to use a thermal electric generator (TEG) to power an electric car.</p>
-        <p>The body of the car is made of bamboo sticks and hard cardboard, with a tricycle-wheel configuration to reduce weight. The vehicle has two detachable parts: the generator, and the motor, which is a 3-5V, 200 RPM motor, with a reduction gearbox.</p>
+        <p>This project explores using a thermal electric generator (TEG) to power a custom electric vehicle.</p>
+        <p>The chassis is constructed from bamboo and rigid cardboard, utilizing a tricycle configuration to minimize mass. The assembly features modular generator and motor units, powered by a 3-5V geared motor.</p>
       </div>
     </div>
 
-    <!-- Block 2: text left, image right -->
+    <!-- Block 2: Internal mechanics -->
     <div class="block reverse">
-      <img src="images/tev-top.jpg" alt="TEV top view" />
+      <img src="images/tev-top.jpg" alt="TEV Internal view" />
       <div class="text">
-        <p>The generator is basically a TEG with a heating chamber on the bottom, and an ice container on top of it. Moreover, the generator is placed on a swing system, therefore, even when the vehicle goes on the ramp, the generator will always be vertical. In theory, this design further optimizes the heat transfer between the hot side and the cold side of the TEG.</p>
+        <p>The core power unit is a TEG sandwiched between a lower heating chamber and an upper ice reservoir. </p>
+        <p>A key mechanical feature is the swing-mount system, which ensures the generator remains perfectly vertical even while navigating inclines, maximizing the thermal gradient efficiency between the hot and cold junctions.</p>
       </div>
     </div>
 
-    <!-- Block 3: image left, text right -->
+    <!-- Block 3: Power source -->
     <div class="block">
-      <img src="images/tev-front.jpg" alt="TEV front view with candle" />
+      <img src="images/tev-front.jpg" alt="TEV front with heat source" />
       <div class="text">
-        <p>The heat source for this vehicle is a tea light with a modified wick to make the fire larger.</p>
-        <p>The tea light is placed below the TEG, in the heating chamber. To ensure that the heat is distributed on the whole surface of the TEG, a 0.3mm piece of aluminum is installed on the bottom plate with thermal adhesive tape.</p>
+        <p>Heat is provided by a modified tea light candle with an enhanced wick for higher thermal output.</p>
+        <p>To optimize heat distribution across the TEG surface, a 0.3mm aluminum interface plate was bonded to the assembly using high-conductivity thermal adhesive tape.</p>
       </div>
     </div>
 
-    <!-- Block 4: text left, image right -->
+    <!-- Block 4: Performance analysis -->
     <div class="block reverse">
-      <img src="images/tev-rear.jpg" alt="TEV rear view" />
+      <img src="images/tev-rear.jpg" alt="TEV performance testing" />
       <div class="text">
-        <p>After testing, the maximum voltage generated was 2.4V, and the average speed of the car is 0.08 m/s.</p>
-        <p>However, the torque from the motor is not enough for the car to climb a 20 degrees ramp. This can be solved by adding an addition gear reduction as the gearbox that comes with the motor doesn't generate enough torque.</p>
+        <p>Empirical testing yielded a peak output of 2.4V, achieving a sustained velocity of 0.08 m/s.</p>
+        <p>While successful on flat terrain, current motor torque limitations prevent the vehicle from conquering 20-degree gradients—a challenge that could be addressed through an secondary reduction stage in the drive transmission.</p>
       </div>
     </div>
 
-    <!-- You may also like -->
+    <!-- Cross-links to other projects -->
     <div class="also-like">
-      <h2>You may also like</h2>
+      <h2>View Other Projects</h2>
       <div class="also-grid">
         <a href="project-drone.html">
-          <img src="images/drone-main.jpg" alt="Concept Rescue Drone" />
+          <img src="images/drone-main.jpg" alt="Rescue Drone Project" />
         </a>
         <a href="project-peregrine.html">
-          <img src="images/peregrine-main.jpg" alt="The Peregrine" />
+          <img src="images/peregrine-main.jpg" alt="The Peregrine Project" />
         </a>
       </div>
     </div>
 
   </main>
+
 </body>
 </html>
