@@ -7,13 +7,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background-color: #1a1a1a; color: #e0e0e0; font-family: 'Inter', sans-serif; line-height: 1.8; }
+    
+    body { 
+      background-color: #1a1a1a; 
+      color: #e0e0e0; 
+      font-family: 'Inter', sans-serif; 
+      line-height: 2; 
+    }
 
+    /* Navigation Bar */
     nav {
       display: flex;
       justify-content: center;
       gap: 50px;
-      padding: 30px 0;
+      padding: 40px 0;
       border-bottom: 1px solid #2a2a2a;
     }
 
@@ -24,16 +31,21 @@
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      transition: color 0.3s;
+      letter-spacing: 0.2em;
+      transition: all 0.3s ease;
     }
 
-    nav a:hover { color: #fff; }
+    nav a:hover { color: #fff; transform: translateY(-2px); }
 
+    /* Main Content Container */
     main {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 100px 40px;
+      padding: 100px 60px;
+    }
+
+    .section {
+      margin-bottom: 120px;
     }
 
     h1 {
@@ -41,53 +53,67 @@
       font-size: clamp(2.5rem, 8vw, 4.5rem);
       color: #fff;
       margin-bottom: 60px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
     }
 
-    .content-block { margin-bottom: 60px; }
+    h2.section-header {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: #f0b429;
+      margin-bottom: 40px;
+    }
 
+    /* Original Text Styling */
     p { 
-      font-size: 1.4rem; 
+      font-size: 1.3rem; 
       color: #ccc; 
-      margin-bottom: 35px; 
       font-weight: 300; 
-      max-width: 800px;
+      margin-bottom: 30px;
     }
 
-    /* Yellow Highlighting */
+    /* Yellow Highlighting for Technical Landmarks */
     strong { 
       color: #f0b429; 
       font-weight: 500; 
     }
 
-    .skills-header {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: #666;
-      margin-bottom: 30px;
+    /* Education List Styling */
+    .edu-item {
+      margin-bottom: 40px;
+      padding-left: 20px;
+      border-left: 1px solid #333;
     }
 
-    .skills-list {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .skill-tag {
-      background: #222;
-      padding: 12px 24px;
-      border-radius: 4px;
-      border-bottom: 3px solid #f0b429;
+    .edu-title {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 1.2rem;
       color: #fff;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .edu-detail {
+      font-size: 1.1rem;
+      color: #888;
+    }
+
+    /* Highlighting specific degree titles */
+    .highlight-degree {
+      color: #5bc8f5; /* Using the light blue from your home page for contrast */
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      main { padding: 60px 30px; }
+      h1 { font-size: 3rem; }
     }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html">Welcome</a>
     <a href="about.html">About me</a>
@@ -95,24 +121,48 @@
   </nav>
 
   <main>
-    <div class="content-block">
-      <h1>Engineering & Design.</h1>
-      <p>
-        I am a student specializing in <strong>engineering</strong>, with a focus on 
-        <strong>machine design</strong>, <strong>kinematics</strong>, and <strong>control systems</strong>.
-      </p>
+    <!-- Personal Information Section -->
+    <div class="section">
+      <h2 class="section-header">Personal Information</h2>
+      <h1>Nguyen Bui Hoang Anh.</h1>
+      
+      <p>My name is Nguyen Bui Hoang Anh, but <strong>Bee</strong> is the nickname my parents gave me so I go with Bee.</p>
+      
+      <p>I am an university student, who has a huge interest in <strong>aircrafts</strong>.</p>
+      
+      <p>My hobbies are playing guitar, RP video games, Legos, and building <strong>scale models</strong> (mostly from scratch because... they are expensive).</p>
     </div>
 
-    <div class="content-block">
-      <h2 class="skills-header">Core Competencies</h2>
-      <div class="skills-list">
-        <div class="skill-tag">Spur Gears</div>
-        <div class="skill-tag">Bode Plots</div>
-        <div class="skill-tag">Nyquist Plots</div>
-        <div class="skill-tag">PID Design</div>
-        <div class="skill-tag">Aerospace Concept</div>
+    <!-- Education Section -->
+    <div class="section">
+      <h2 class="section-header">Education</h2>
+
+      <div class="edu-item">
+        <span class="edu-title">Primary school</span>
+        <span class="edu-detail">Nguyen Van To; Haiphong; Vietnam</span>
+      </div>
+
+      <div class="edu-item">
+        <span class="edu-title">Secondary school</span>
+        <span class="edu-detail">Tranphu; Haiphong; Vietnam</span>
+      </div>
+
+      <div class="edu-item">
+        <span class="edu-title">High school</span>
+        <span class="edu-detail">Saint Lambert International (SLI); Saint Lambert; Quebec; Canada</span>
+      </div>
+
+      <div class="edu-item">
+        <span class="edu-title highlight-degree">Diplôme d'études collégiales: Pure and Applied science</span>
+        <span class="edu-detail">Champlain College; Saint Lambert; Quebec; Canada (2020 - 2022)</span>
+      </div>
+
+      <div class="edu-item">
+        <span class="edu-title highlight-degree">BEng in Aerospace Engineering</span>
+        <span class="edu-detail">Concordia University; Montreal; Quebec; Canada (2023)</span>
       </div>
     </div>
   </main>
+
 </body>
 </html>
