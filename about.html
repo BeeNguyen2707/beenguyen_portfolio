@@ -1,99 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to the Bee Hive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Dancing+Script:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <title>About Me – Bee Hive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #1a1a1a; color: #e0e0e0; font-family: 'Inter', sans-serif; line-height: 1.8; }
 
-    body {
-      min-height: 100vh;
-      background-color: #0a1628;
-      background-image: 
-        url('images/bee-logo.jpg'), 
-        linear-gradient(135deg, #0d1f3c 0%, #0a1628 40%, #0d2444 70%, #0a1628 100%);
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5); /* 50% Darker overlay */
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .hero {
-      position: relative;
-      text-align: center;
-      z-index: 1;
-    }
-
-    .title {
-      font-family: 'Dancing Script', cursive;
-      font-size: clamp(3rem, 10vw, 5rem);
-      margin-bottom: 60px;
-      line-height: 1.2;
-    }
-
-    .title .welcome { color: #5bc8f5; }
-    .title .to-the  { color: #ffffff; }
-    .title .bee-hive { color: #f0b429; }
-
-    .nav-buttons {
+    nav {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      margin-bottom: 50px;
+      gap: 50px;
+      padding: 30px 0;
+      border-bottom: 1px solid #2a2a2a;
     }
 
-    .nav-buttons a {
-      background: #fff;
-      color: #111;
+    nav a {
+      color: #888;
       text-decoration: none;
-      padding: 16px 45px;
-      border-radius: 999px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transition: color 0.3s;
     }
 
-    .nav-buttons a:hover {
-      background: #f0b429;
-      transform: translateY(-5px);
+    nav a:hover { color: #fff; }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 40px;
     }
 
-    .contact { color: #aaa; font-size: 0.9rem; }
-    .contact a { color: #f0b429; text-decoration: none; }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      color: #fff;
+      margin-bottom: 60px;
+      letter-spacing: -0.02em;
+    }
+
+    .content-block { margin-bottom: 60px; }
+
+    p { 
+      font-size: 1.4rem; 
+      color: #ccc; 
+      margin-bottom: 35px; 
+      font-weight: 300; 
+      max-width: 800px;
+    }
+
+    /* Yellow Highlighting */
+    strong { 
+      color: #f0b429; 
+      font-weight: 500; 
+    }
+
+    .skills-header {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .skills-list {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .skill-tag {
+      background: #222;
+      padding: 12px 24px;
+      border-radius: 4px;
+      border-bottom: 3px solid #f0b429;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1 class="title">
-      <span class="welcome">Welcome</span>
-      <span class="to-the"> to the </span><br>
-      <span class="bee-hive">Bee Hive</span>
-    </h1>
+  <nav>
+    <a href="index.html">Welcome</a>
+    <a href="about.html">About me</a>
+    <a href="projects.html">My projects</a>
+  </nav>
 
-    <div class="nav-buttons">
-      <a href="about.html">About me</a>
-      <a href="projects.html">My projects</a>
+  <main>
+    <div class="content-block">
+      <h1>Engineering & Design.</h1>
+      <p>
+        I am a student specializing in <strong>engineering</strong>, with a focus on 
+        <strong>machine design</strong>, <strong>kinematics</strong>, and <strong>control systems</strong>.
+      </p>
     </div>
 
-    <p class="contact">Contact: <a href="mailto:hoanganhhp2003@gmail.com">hoanganhhp2003@gmail.com</a></p>
-  </div>
+    <div class="content-block">
+      <h2 class="skills-header">Core Competencies</h2>
+      <div class="skills-list">
+        <div class="skill-tag">Spur Gears</div>
+        <div class="skill-tag">Bode Plots</div>
+        <div class="skill-tag">Nyquist Plots</div>
+        <div class="skill-tag">PID Design</div>
+        <div class="skill-tag">Aerospace Concept</div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
