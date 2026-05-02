@@ -1,110 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Me – Bee Hive</title>
-  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400&display=swap)" rel="stylesheet">
+  <title>Welcome to the Bee Hive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Dancing+Script:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: #1a1a1a;
-      color: #e0e0e0;
+      min-height: 100vh;
+      background-color: #0a1628;
+      background-image: 
+        url('images/bee-logo.jpg'), 
+        linear-gradient(135deg, #0d1f3c 0%, #0a1628 40%, #0d2444 70%, #0a1628 100%);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.75;
     }
 
-    nav {
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5); /* 50% Darker overlay */
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .title {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(3rem, 10vw, 5rem);
+      margin-bottom: 60px;
+      line-height: 1.2;
+    }
+
+    .title .welcome { color: #5bc8f5; }
+    .title .to-the  { color: #ffffff; }
+    .title .bee-hive { color: #f0b429; }
+
+    .nav-buttons {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      padding: 18px 0;
-      border-bottom: 1px solid #2a2a2a;
+      gap: 30px;
+      margin-bottom: 50px;
     }
 
-    nav a {
-      color: #aaa;
+    .nav-buttons a {
+      background: #fff;
+      color: #111;
       text-decoration: none;
+      padding: 16px 45px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
 
-    nav a:hover { color: #fff; }
-    nav a.active { color: #fff; font-weight: 400; }
-
-    main {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 60px 24px 100px;
+    .nav-buttons a:hover {
+      background: #f0b429;
+      transform: translateY(-5px);
     }
 
-    h1.page-title {
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      color: #fff;
-      margin-bottom: 60px;
-    }
-
-    section { margin-bottom: 60px; }
-
-    h2.section-title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.6rem;
-      color: #f0b429;
-      font-style: italic;
-      margin-bottom: 20px;
-    }
-
-    p { margin-bottom: 8px; }
-
-    .edu-highlight {
-      color: #5bc8f5;
-      margin-top: 20px;
-      margin-bottom: 4px;
-      font-size: 0.95rem;
-    }
-
-    .edu-detail {
-      color: #ccc;
-      margin-bottom: 4px;
-    }
+    .contact { color: #aaa; font-size: 0.9rem; }
+    .contact a { color: #f0b429; text-decoration: none; }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Welcome</a>
-    <a href="about.html" class="active">About me</a>
-    <a href="projects.html">My projects</a>
-  </nav>
+  <div class="hero">
+    <h1 class="title">
+      <span class="welcome">Welcome</span>
+      <span class="to-the"> to the </span><br>
+      <span class="bee-hive">Bee Hive</span>
+    </h1>
 
-  <main>
-    <h1 class="page-title">About me</h1>
+    <div class="nav-buttons">
+      <a href="about.html">About me</a>
+      <a href="projects.html">My projects</a>
+    </div>
 
-    <section>
-      <h2 class="section-title">Personal information</h2>
-      <p>My name is Nguyen Bui Hoang Anh, but Bee is the nickname my parents gave me so I go with Bee.</p>
-      <p>I am an university student, who has a huge interest in aircrafts.</p>
-      <p>My hobbies are playing guitar, RP video games, Legos, and building scale models (mostly from scratch because... they are expensive).</p>
-    </section>
-
-    <section>
-      <h2 class="section-title">Education</h2>
-      <p>Primary school: Nguyen Van To; Haiphong; Vietnam</p>
-      <p>Secondary school: Tranphu; Haiphong; Vietnam</p>
-      <p>High school: Saint Lambert International (SLI); Saint Lambert; Quebec; Canada</p>
-
-      <p class="edu-highlight">Diplôme d'études collégiales: Pure and Applied science</p>
-      <p class="edu-detail">Champlain College; Saint Lambert; Quebec; Canada (2020 - 2022)</p>
-
-      <p class="edu-highlight">BEng in Aerospace Engineering</p>
-      <p class="edu-detail">Concordia University; Montreal; Quebec; Canada (2023)</p>
-    </section>
-  </main>
+    <p class="contact">Contact: <a href="mailto:hoanganhhp2003@gmail.com">hoanganhhp2003@gmail.com</a></p>
+  </div>
 </body>
 </html>
