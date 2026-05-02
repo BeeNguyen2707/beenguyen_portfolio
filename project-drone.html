@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Concept Rescue Drone – Bee Hive</title>
-  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap)" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -50,7 +50,7 @@
       margin-bottom: 60px;
     }
 
-    /* Image + text blocks: each side exactly 50% */
+    /* Image + text blocks */
     .block {
       display: flex;
       align-items: center;
@@ -65,6 +65,7 @@
       display: block;
       object-fit: cover;
       min-height: 480px;
+      border-radius: 4px;
     }
 
     .block .text {
@@ -85,27 +86,41 @@
 
     .block .text p:last-child { margin-bottom: 0; }
 
-    /* Standalone images: full width of container, tall */
+    /* FIXED: Standalone images now have 80px spacing */
     .block.full {
       justify-content: center;
-      margin-bottom: 0;
+      margin-bottom: 80px; /* Changed from 0 to 80px */
     }
 
     .block.full img {
       width: 100%;
       flex: none;
-      height: 600px;
+      height: 700px; /* Slightly taller for a more cinematic feel */
       object-fit: cover;
       display: block;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
 
-    .also-like { margin-top: 80px; }
+    /* Subtle hover effect for the big renders */
+    .block.full img:hover {
+      transform: scale(1.01);
+    }
+
+    .also-like { 
+        margin-top: 120px; 
+        border-top: 1px solid #2a2a2a;
+        padding-top: 60px;
+    }
 
     .also-like h2 {
       font-size: 0.95rem;
       font-weight: 300;
       color: #ccc;
       margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     .also-grid {
@@ -124,10 +139,14 @@
       height: 260px;
       object-fit: cover;
       display: block;
-      transition: opacity 0.2s;
+      border-radius: 4px;
+      transition: opacity 0.3s, transform 0.3s;
     }
 
-    .also-grid img:hover { opacity: 0.8; }
+    .also-grid img:hover { 
+        opacity: 0.7; 
+        transform: translateY(-5px);
+    }
 
     @media (max-width: 900px) {
       main { padding: 40px 24px 80px; }
@@ -148,7 +167,7 @@
   <main>
     <h1 class="page-title">Concept Rescue Drone</h1>
 
-    <!-- Block 1: image left (50%), text right (50%) -->
+    <!-- Perspective 1 Block -->
     <div class="block">
       <img src="images/drone-perspective.jpg" alt="Drone perspective view" />
       <div class="text">
@@ -158,7 +177,7 @@
       </div>
     </div>
 
-    <!-- Block 2: text left (50%), image right (50%) -->
+    <!-- Perspective 2 Block -->
     <div class="block reverse">
       <img src="images/drone-perspective2.jpg" alt="Drone second perspective" />
       <div class="text">
@@ -166,7 +185,7 @@
       </div>
     </div>
 
-    <!-- Block 3: image left (50%), text right (50%) -->
+    <!-- Top View Block -->
     <div class="block">
       <img src="images/drone-top.jpg" alt="Drone top view" />
       <div class="text">
@@ -174,7 +193,7 @@
       </div>
     </div>
 
-    <!-- Standalone images: full width, 600px tall -->
+    <!-- Standalone Gallery -->
     <div class="block full">
       <img src="images/drone-front-under.jpg" alt="Drone front underside view" />
     </div>
