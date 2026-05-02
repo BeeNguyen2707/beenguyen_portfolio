@@ -7,112 +7,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background-color: #1a1a1a;
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 1.15rem;
-      line-height: 1.8;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      padding: 28px 0;
-      border-bottom: 1px solid #2a2a2a;
-    }
-
-    nav a {
-      color: #888;
-      text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      transition: all 0.3s ease;
-    }
-
+    body { background-color: #1a1a1a; color: #e0e0e0; font-family: 'Inter', sans-serif; font-weight: 300; font-size: 1.15rem; line-height: 1.8; }
+    nav { display: flex; justify-content: center; gap: 50px; padding: 28px 0; border-bottom: 1px solid #2a2a2a; }
+    nav a { color: #888; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; }
     nav a:hover { color: #fff; transform: translateY(-2px); }
-
-    main {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 100px 40px;
-    }
-
-    h1.page-title {
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 100px;
-      letter-spacing: -0.03em;
-    }
-
-    .block {
-      display: flex;
-      align-items: center;
-      gap: 80px;
-      margin-bottom: 140px;
-    }
-
+    main { max-width: 1400px; margin: 0 auto; padding: 100px 40px; }
+    h1.page-title { text-align: center; font-family: 'Montserrat', sans-serif; font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 700; color: #fff; margin-bottom: 100px; letter-spacing: -0.03em; }
+    .block { display: flex; align-items: center; gap: 80px; margin-bottom: 140px; }
     .block.reverse { flex-direction: row-reverse; }
-
-    .block img {
-      width: 55%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-      background-color: rgba(255,255,255,0.02);
-    }
-
-    .block .text {
-      width: 45%;
-      padding: 0 20px;
-    }
-
-    .block .text p {
-      margin-bottom: 30px;
-      color: #ccc;
-      font-size: 1.25rem;
-    }
-
+    .block img { width: 55%; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 25px 60px rgba(0,0,0,0.6); background-color: rgba(255,255,255,0.02); }
+    .block .text { width: 45%; padding: 0 20px; text-align: center; }
+    .block .text p { margin-bottom: 30px; color: #ccc; font-size: 1.25rem; }
     .block .text p strong { color: #f0b429; font-weight: 500; }
-
     .also-like { margin-top: 150px; border-top: 1px solid #333; padding-top: 80px; }
-    .also-like h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.25em;
-      margin-bottom: 50px;
-      color: #666;
-      text-align: center;
-    }
-
+    .also-like h2 { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 50px; color: #666; text-align: center; }
     .also-grid { display: flex; gap: 30px; }
     .also-grid a { flex: 1; text-decoration: none; }
-    .also-grid img { 
-      width: 100%; 
-      aspect-ratio: 16/9; 
-      object-fit: contain; 
-      background: #000; 
-      border-radius: 8px; 
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    }
-    .also-grid a:hover img { transform: translateY(-15px) scale(1.02); opacity: 0.7; }
-
-    @media (max-width: 1000px) {
-      .block, .block.reverse { flex-direction: column; text-align: center; }
-      .block img, .block .text { width: 100%; }
-      .also-grid { flex-direction: column; }
-    }
+    .also-grid img { width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #000; border-radius: 8px; transition: all 0.4s ease; }
+    .also-grid a:hover img { transform: translateY(-15px); opacity: 0.7; }
+    @media (max-width: 1000px) { .block, .block.reverse { flex-direction: column; text-align: center; } .block img, .block .text { width: 100%; } .also-grid { flex-direction: column; } }
   </style>
 </head>
 <body>
@@ -121,46 +34,35 @@
     <a href="about.html">About me</a>
     <a href="projects.html">My projects</a>
   </nav>
-
   <main>
     <h1 class="page-title">Thermal Electric Vehicle</h1>
-
-    <!-- Block 1: Chassis & Motor -->
     <div class="block">
       <img src="images/tev-main.jpg" alt="TEV Profile" />
       <div class="text">
-        <p>This project explores utilizing a <strong>thermal electric generator (TEG)</strong> to power a custom-built electric vehicle.</p>
-        <p>The chassis is constructed from bamboo and rigid cardboard, featuring a tricycle-wheel configuration to minimize weight while maintaining structural integrity.</p>
+        <p>This project is to use a <strong>thermal electric generator (TEG)</strong> to power an electric car.</p>
+        <p>The body of the car is made of bamboo sticks and hard cardboard, with a <strong>tricycle-wheel configuration</strong> to reduce weight. The vehicle has two detachable parts: the generator, and the motor, which is a <strong>3-5V, 200 RPM motor</strong>, with a reduction gearbox.</p>
       </div>
     </div>
-
-    <!-- Block 2: The Swing System -->
     <div class="block reverse">
       <img src="images/tev-top.jpg" alt="Swing System" />
       <div class="text">
-        <p>A key innovation is the <strong>swing-mount system</strong>, which ensures the generator remains perfectly vertical even when navigating ramps.</p>
-        <p>This design optimizes the thermal gradient between the hot and cold junctions, significantly improving heat transfer efficiency.</p>
+        <p>The generator is basically a TEG with a heating chamber on the bottom, and an ice container on top of it. Moreover, the generator is placed on a <strong>swing system</strong>, therefore, even when the vehicle goes on the ramp, the generator will always be vertical. In theory, this design further optimizes the heat transfer between the hot side and the cold side of the TEG.</p>
       </div>
     </div>
-
-    <!-- Block 3: Heat Distribution -->
     <div class="block">
-      <img src="images/tev-front.jpg" alt="Thermal Management" />
+      <img src="images/tev-front.jpg" alt="Heat Source" />
       <div class="text">
-        <p>The heat source is a modified tea light candle placed in a lower chamber.</p>
-        <p>To maximize coverage, a <strong>0.3mm aluminum interface plate</strong> was bonded to the TEG using high-conductivity thermal adhesive tape.</p>
+        <p>The heat source for this vehicle is a tea light with a modified wick to make the fire larger.</p>
+        <p>The tea light is placed below the TEG, in the heating chamber. To ensure that the heat is distributed on the whole surface of the TEG, a <strong>0.3mm piece of aluminum</strong> is installed on the bottom plate with thermal adhesive tape.</p>
       </div>
     </div>
-
-    <!-- Block 4: Analysis -->
     <div class="block reverse">
-      <img src="images/tev-rear.jpg" alt="Performance Testing" />
+      <img src="images/tev-rear.jpg" alt="Analysis" />
       <div class="text">
-        <p>Empirical testing reached a peak output of <strong>2.4V</strong> with a sustained velocity of 0.08 m/s.</p>
-        <p>Future iterations will implement an secondary gear reduction stage to overcome torque limitations on 20-degree gradients.</p>
+        <p>After testing, the maximum voltage generated was <strong>2.4V</strong>, and the average speed of the car is <strong>0.08 m/s</strong>.</p>
+        <p>However, the torque from the motor is not enough for the car to climb a <strong>20 degrees ramp</strong>. This can be solved by adding an addition gear reduction as the gearbox that comes with the motor doesn't generate enough torque.</p>
       </div>
     </div>
-
     <div class="also-like">
       <h2>My other projects</h2>
       <div class="also-grid">
