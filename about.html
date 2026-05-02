@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me – Bee Hive</title>
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400&display=swap)" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 18px 0;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: #fff; }
+    nav a.active { color: #fff; font-weight: 400; }
+
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    h1.page-title {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: 60px;
+    }
+
+    section { margin-bottom: 60px; }
+
+    h2.section-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: #f0b429;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    p { margin-bottom: 8px; }
+
+    .edu-highlight {
+      color: #5bc8f5;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .edu-detail {
+      color: #ccc;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Welcome</a>
+    <a href="about.html" class="active">About me</a>
+    <a href="projects.html">My projects</a>
+  </nav>
+
+  <main>
+    <h1 class="page-title">About me</h1>
+
+    <section>
+      <h2 class="section-title">Personal information</h2>
+      <p>My name is Nguyen Bui Hoang Anh, but Bee is the nickname my parents gave me so I go with Bee.</p>
+      <p>I am an university student, who has a huge interest in aircrafts.</p>
+      <p>My hobbies are playing guitar, RP video games, Legos, and building scale models (mostly from scratch because... they are expensive).</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Education</h2>
+      <p>Primary school: Nguyen Van To; Haiphong; Vietnam</p>
+      <p>Secondary school: Tranphu; Haiphong; Vietnam</p>
+      <p>High school: Saint Lambert International (SLI); Saint Lambert; Quebec; Canada</p>
+
+      <p class="edu-highlight">Diplôme d'études collégiales: Pure and Applied science</p>
+      <p class="edu-detail">Champlain College; Saint Lambert; Quebec; Canada (2020 - 2022)</p>
+
+      <p class="edu-highlight">BEng in Aerospace Engineering</p>
+      <p class="edu-detail">Concordia University; Montreal; Quebec; Canada (2023)</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to the Bee Hive</title>
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400&display=swap)" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background-color: #0a1628;
+      background-image:
+        linear-gradient(135deg, #0d1f3c 0%, #0a1628 40%, #0d2444 70%, #0a1628 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Polygon background shapes */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(120deg, rgba(15,35,70,0.8) 0%, transparent 50%),
+        linear-gradient(240deg, rgba(10,25,55,0.6) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .bee-logo {
+      width: 320px;
+      max-width: 80vw;
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
+
+    .title {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+
+    .title .welcome { color: #5bc8f5; }
+    .title .to-the  { color: #ffffff; }
+    .title .bee-hive { color: #f0b429; }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 400px;
+      margin-bottom: 50px;
+    }
+
+    .nav-buttons a {
+      background: rgba(255,255,255,0.92);
+      color: #111;
+      text-decoration: none;
+      padding: 10px 28px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .nav-buttons a:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    .email {
+      color: #ccc;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+    }
+
+    .email span {
+      text-decoration: underline;
+      color: #ccc;
+    }
+
+    .email a {
+      color: #ccc;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <!-- Replace src with your actual bee logo image -->
+    <img class="bee-logo" src="images/bee-logo.png" alt="Bee logo" />
+
+    <h1 class="title">
+      <span class="welcome">Welcome</span>
+      <span class="to-the"> to the </span>
+      <span class="bee-hive">Bee Hive</span>
+    </h1>
+
+    <div class="nav-buttons">
+      <a href="about.html">About me</a>
+      <a href="projects.html">My projects</a>
+    </div>
+
+    <p class="email">
+      <span>Email:</span> <a href="mailto:hoanganhhp2003@gmail.com">hoanganhhp2003@gmail.com</a>
+    </p>
+  </div>
+</body>
+</html>
