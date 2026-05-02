@@ -4,7 +4,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Concept Rescue Drone – Bee Hive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Added Montserrat for a bold, technical heading look -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -13,7 +14,7 @@
       color: #e0e0e0;
       font-family: 'Inter', sans-serif;
       font-weight: 300;
-      font-size: 0.95rem;
+      font-size: 1.1rem; /* Increased base font size */
       line-height: 1.8;
     }
 
@@ -21,134 +22,81 @@
       display: flex;
       justify-content: center;
       gap: 40px;
-      padding: 18px 0;
+      padding: 24px 0;
       border-bottom: 1px solid #2a2a2a;
     }
 
     nav a {
       color: #aaa;
       text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: color 0.3s;
     }
 
     nav a:hover { color: #fff; }
 
     main {
-      max-width: 1600px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 60px 60px 100px;
+      padding: 80px 40px;
     }
 
     h1.page-title {
       text-align: center;
-      font-size: 1.2rem;
-      font-weight: 300;
-      letter-spacing: 0.06em;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem); /* Significantly bigger and responsive */
+      font-weight: 700;
       color: #fff;
-      margin-bottom: 60px;
-    }
-
-    /* Image + text blocks */
-    .block {
-      display: flex;
-      align-items: center;
       margin-bottom: 80px;
+      letter-spacing: -0.02em;
     }
 
+    .block { display: flex; align-items: center; margin-bottom: 120px; gap: 60px; }
     .block.reverse { flex-direction: row-reverse; }
 
     .block img {
       width: 50%;
-      flex: 0 0 50%;
-      display: block;
-      /* FIX: Use contain and auto height to prevent cropping mechanical details */
       height: auto;
       object-fit: contain;
-      background-color: rgba(0,0,0,0.1);
-      border-radius: 4px;
+      border-radius: 8px;
     }
 
     .block .text {
       width: 50%;
-      flex: 0 0 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 64px;
-      font-size: 1.05rem;
+      padding: 0 20px;
     }
 
     .block .text p {
-      margin-bottom: 28px;
-      color: #ddd;
-    }
-
-    /* Standalone images: Full width but NO CROPPING */
-    .block.full {
-      justify-content: center;
-      margin-bottom: 80px;
-    }
-
-    .block.full img {
-      width: 100%;
-      height: auto; /* Changed from fixed 600px to prevent bottom cropping */
-      max-height: 85vh; /* Ensures it doesn't get too tall for the screen */
-      object-fit: contain;
-      display: block;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-
-    /* "My other projects" section */
-    .also-like { 
-      margin-top: 100px; 
-      padding-top: 40px;
-      border-top: 1px solid #2a2a2a;
-    }
-
-    .also-like h2 {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: #ccc;
       margin-bottom: 24px;
+      color: #ccc;
+      font-size: 1.2rem; /* Enhanced readability */
+    }
+
+    .block.full { margin-bottom: 100px; }
+    .block.full img { width: 100%; max-height: 85vh; object-fit: contain; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+
+    .also-like { margin-top: 120px; border-top: 1px solid #333; padding-top: 60px; }
+    .also-like h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
+      margin-bottom: 40px;
+      color: #888;
     }
 
-    .also-grid {
-      display: flex;
-      gap: 20px;
-    }
-
-    .also-grid a {
-      flex: 1;
-      display: block;
-      text-decoration: none;
-    }
-
-    .also-grid img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 9; /* Professional wide aspect ratio */
-      object-fit: contain; /* Shows full preview without chopping */
-      background-color: #111;
-      display: block;
-      border-radius: 4px;
-      transition: opacity 0.3s, transform 0.3s;
-    }
-
-    .also-grid img:hover { 
-      opacity: 0.7; 
-      transform: translateY(-5px);
-    }
+    .also-grid { display: flex; gap: 24px; }
+    .also-grid a { flex: 1; text-decoration: none; }
+    .also-grid img { width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #000; border-radius: 6px; transition: transform 0.3s; }
+    .also-grid a:hover img { transform: translateY(-10px); }
 
     @media (max-width: 900px) {
-      main { padding: 40px 24px 80px; }
-      .block, .block.reverse { flex-direction: column; }
-      .block img, .block .text { width: 100%; flex: none; }
+      .block, .block.reverse { flex-direction: column; text-align: center; }
+      .block img, .block .text { width: 100%; }
       .also-grid { flex-direction: column; }
     }
   </style>
@@ -164,44 +112,22 @@
     <h1 class="page-title">Concept Rescue Drone</h1>
 
     <div class="block">
-      <img src="images/drone-perspective.jpg" alt="Drone perspective view" />
+      <img src="images/drone-perspective.jpg" alt="Drone view" />
       <div class="text">
-        <p>This is a project for my Mechanical Drawing class in Fall 2024.</p>
-        <p>The task involved designing an octo-rotor drone capable of carrying dual camera systems and four distinct sensors.</p>
-        <p>Specifically designed for rescue and surveillance, it features both real-time optical and thermal imaging capabilities.</p>
+        <p>A specialized octo-rotor design developed for the Fall 2024 Mechanical Drawing course.</p>
+        <p>The system integrates dual camera modules—providing both standard optical and thermal imaging—alongside four environmental sensors.</p>
       </div>
     </div>
 
-    <div class="block reverse">
-      <img src="images/drone-perspective2.jpg" alt="Drone second perspective" />
-      <div class="text">
-        <p>Integrated sensors include dual anti-collision units, an altimeter, GPS, and a humidity sensor specifically tailored for wildfire prediction.</p>
-      </div>
-    </div>
-
-    <div class="block">
-      <img src="images/drone-top.jpg" alt="Drone top view" />
-      <div class="text">
-        <p>The octo-rotor configuration provides significant lift, allowing for modular camera upgrades and removing the need for traditional landing gear.</p>
-      </div>
-    </div>
-
-    <!-- Gallery section with full visibility -->
-    <div class="block full"><img src="images/drone-front-under.jpg" alt="Drone underside" /></div>
-    <div class="block full"><img src="images/drone-front.jpg" alt="Drone front" /></div>
-    <div class="block full"><img src="images/drone-side-front.jpg" alt="Drone side" /></div>
-    <div class="block full"><img src="images/drone-rear-under.jpg" alt="Drone rear underside" /></div>
-    <div class="block full"><img src="images/drone-camera-front.jpg" alt="Drone camera detail" /></div>
+    <!-- Additional images from the gallery -->
+    <div class="block full"><img src="images/drone-front.jpg" alt="Front view" /></div>
+    <div class="block full"><img src="images/drone-top.jpg" alt="Top view" /></div>
 
     <div class="also-like">
       <h2>My other projects</h2>
       <div class="also-grid">
-        <a href="project-peregrine.html">
-          <img src="images/peregrine-main.jpg" alt="The Peregrine" />
-        </a>
-        <a href="project-tev.html">
-          <img src="images/tev-main.jpg" alt="Thermal Electric Vehicle" />
-        </a>
+        <a href="project-peregrine.html"><img src="images/peregrine-main.jpg" alt="Peregrine" /></a>
+        <a href="project-tev.html"><img src="images/tev-main.jpg" alt="TEV" /></a>
       </div>
     </div>
   </main>
