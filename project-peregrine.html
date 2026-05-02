@@ -4,160 +4,33 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Peregrine – Bee Hive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    /* Using the exact same styling as TEV for professional consistency */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background-color: #1a1a1a;
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 18px 0;
-      border-bottom: 1px solid #2a2a2a;
-    }
-
-    nav a {
-      color: #aaa;
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: #fff; }
-
-    main {
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 60px 60px 100px;
-    }
-
-    h1.page-title {
-      text-align: center;
-      font-size: 1.2rem;
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      color: #fff;
-      margin-bottom: 60px;
-    }
-
-    /* Image + text blocks */
-    .block {
-      display: flex;
-      align-items: center;
-      margin-bottom: 80px;
-    }
-
+    body { background-color: #1a1a1a; color: #e0e0e0; font-family: 'Inter', sans-serif; font-weight: 300; font-size: 1.15rem; line-height: 1.8; }
+    nav { display: flex; justify-content: center; gap: 50px; padding: 28px 0; border-bottom: 1px solid #2a2a2a; }
+    nav a { color: #888; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s ease; }
+    nav a:hover { color: #fff; transform: translateY(-2px); }
+    main { max-width: 1400px; margin: 0 auto; padding: 100px 40px; }
+    h1.page-title { text-align: center; font-family: 'Montserrat', sans-serif; font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 700; color: #fff; margin-bottom: 100px; letter-spacing: -0.03em; }
+    .block { display: flex; align-items: center; gap: 80px; margin-bottom: 140px; }
     .block.reverse { flex-direction: row-reverse; }
-
-    .block > img {
-      width: 55%;
-      flex: 0 0 55%;
-      display: block;
-      /* FIX: Removed fixed min-height to prevent cropping aircraft wings */
-      height: auto;
-      object-fit: contain;
-      background-color: rgba(0,0,0,0.1);
-      border-radius: 4px;
-    }
-
-    .block .text {
-      width: 45%;
-      flex: 0 0 45%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 56px;
-      font-size: 1.05rem;
-    }
-
-    .block .text p {
-      margin-bottom: 24px;
-      color: #ddd;
-    }
-
-    .block .text p:last-child { margin-bottom: 0; }
-
-    /* Standalone full-width images: NO CROPPING */
-    .block.full {
-      justify-content: center;
-      margin-bottom: 80px;
-    }
-
-    .block.full > img {
-      width: 100%;
-      height: auto; 
-      max-height: 85vh; 
-      object-fit: contain;
-      display: block;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-
-    /* "My other projects" section */
-    .also-like { 
-      margin-top: 100px; 
-      padding-top: 40px;
-      border-top: 1px solid #2a2a2a;
-    }
-
-    .also-like h2 {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: #ccc;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .also-grid {
-      display: flex;
-      gap: 16px;
-    }
-
-    .also-grid a {
-      flex: 1;
-      display: block;
-      text-decoration: none;
-    }
-
-    .also-grid img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 9;
-      /* FIX: Ensures the full aircraft is shown in the preview box */
-      object-fit: contain; 
-      background-color: #111;
-      display: block;
-      border-radius: 4px;
-      transition: opacity 0.3s, transform 0.3s;
-    }
-
-    .also-grid img:hover { 
-      opacity: 0.7; 
-      transform: translateY(-5px);
-    }
-
-    @media (max-width: 900px) {
-      main { padding: 40px 24px 80px; }
-      .block, .block.reverse { flex-direction: column; }
-      .block > img, .block .text { width: 100%; flex: none; }
-      .also-grid { flex-direction: column; }
-    }
+    .block img { width: 55%; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 25px 60px rgba(0,0,0,0.6); }
+    .block .text { width: 45%; padding: 0 20px; }
+    .block .text p { margin-bottom: 30px; color: #ccc; font-size: 1.25rem; }
+    .block.full { margin-bottom: 140px; }
+    .block.full img { width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 12px; }
+    .also-like { margin-top: 150px; border-top: 1px solid #333; padding-top: 80px; }
+    .also-like h2 { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 50px; color: #666; text-align: center; }
+    .also-grid { display: flex; gap: 30px; }
+    .also-grid a { flex: 1; text-decoration: none; }
+    .also-grid img { width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #000; border-radius: 8px; transition: all 0.4s ease; }
+    .also-grid a:hover img { transform: translateY(-15px); opacity: 0.7; }
+    @media (max-width: 1000px) { .block, .block.reverse { flex-direction: column; text-align: center; } .block img, .block .text { width: 100%; } .also-grid { flex-direction: column; } }
   </style>
 </head>
 <body>
-
   <nav>
     <a href="index.html">Welcome</a>
     <a href="about.html">About me</a>
@@ -167,48 +40,43 @@
   <main>
     <h1 class="page-title">The Peregrine</h1>
 
-    <!-- Block 1 -->
+    <!-- Block 1: The Design Team -->
     <div class="block">
-      <img src="images/peregrine-city.jpg" alt="Peregrine flying over city" />
+      <img src="images/peregrine-city.jpg" alt="Peregrine Design" />
       <div class="text">
-        <p>The Peregrine is a concept aircraft designed by me and five Aerospace Engineering colleagues.</p>
+        <p>The Peregrine is a high-performance concept aircraft designed as a collaborative effort by a team of <strong>six Aerospace Engineering colleagues</strong>.</p>
       </div>
     </div>
 
-    <!-- Block 2 -->
-    <div class="block">
-      <img src="images/peregrine-clouds.jpg" alt="Peregrine above clouds" />
+    <!-- Block 2: Market & Speed -->
+    <div class="block reverse">
+      <img src="images/peregrine-clouds.jpg" alt="Performance" />
       <div class="text">
-        <p>A business turboprop tailored for the European market, featuring a 1400 km range and a maximum velocity of 560 km/h.</p>
+        <p>Tailored for the European business market, this turboprop features a <strong>1400 km range</strong> and a top speed of 560 km/h.</p>
       </div>
     </div>
 
-    <!-- Block 3 -->
+    <!-- Block 3: Specs -->
     <div class="block">
-      <img src="images/peregrine-sunset.jpg" alt="Peregrine at sunset" />
+      <img src="images/peregrine-sunset.jpg" alt="Specifications" />
       <div class="text">
-        <p>With a 17m wingspan and 15.3m length, the aircraft supports a 4.9 ton MTOW and accommodates 9 passengers.</p>
-        <p>The propulsion system utilizes twin turboprop engines delivering 1700 shaft horsepower.</p>
+        <p>With a 17m wingspan and an <strong>MTOW of 4.9 tons</strong>, the aircraft is engineered to comfortably carry 9 passengers.</p>
+        <p>Power is delivered via twin turboprop engines producing 1700 shaft horsepower.</p>
       </div>
     </div>
 
-    <!-- Full width render -->
+    <!-- Full Width Render -->
     <div class="block full">
-      <img src="images/peregrine-above.jpg" alt="Peregrine aerial view" />
+      <img src="images/peregrine-above.jpg" alt="Peregrine Aerial" />
     </div>
 
     <div class="also-like">
       <h2>My other projects</h2>
       <div class="also-grid">
-        <a href="project-drone.html">
-          <img src="images/drone-main.jpg" alt="Concept Rescue Drone" />
-        </a>
-        <a href="project-tev.html">
-          <img src="images/tev-main.jpg" alt="Thermal Electric Vehicle" />
-        </a>
+        <a href="project-drone.html"><img src="images/drone-main.jpg" alt="Drone" /></a>
+        <a href="project-tev.html"><img src="images/tev-main.jpg" alt="TEV" /></a>
       </div>
     </div>
-
   </main>
 </body>
 </html>
