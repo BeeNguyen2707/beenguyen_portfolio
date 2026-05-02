@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Peregrine – Bee Hive</title>
+  <title>Concept Rescue Drone – Bee Hive</title>
   <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap)" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,7 +17,6 @@
       line-height: 1.8;
     }
 
-    /* ── Navigation ── */
     nav {
       display: flex;
       justify-content: center;
@@ -36,11 +35,10 @@
 
     nav a:hover { color: #fff; }
 
-    /* ── Page container ── */
     main {
-      max-width: 1600px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 60px 60px 100px;
+      padding: 60px 24px 100px;
     }
 
     h1.page-title {
@@ -52,57 +50,40 @@
       margin-bottom: 60px;
     }
 
-    /* ── Image + text blocks ── */
     .block {
       display: flex;
       align-items: center;
-      margin-bottom: 80px;
+      gap: 48px;
+      margin-bottom: 64px;
     }
 
     .block.reverse { flex-direction: row-reverse; }
 
-    .block > img {
+    .block img {
       width: 55%;
-      flex: 0 0 55%;
-      display: block;
+      max-width: 640px;
       object-fit: cover;
-      min-height: 420px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* Some drone images are full-width (no text beside them) */
+    .block.full img {
+      width: 70%;
+      margin: 0 auto;
     }
 
     .block .text {
-      width: 45%;
-      flex: 0 0 45%;
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      padding: 40px 56px;
-      font-size: 1.05rem;
+      padding: 16px 0;
     }
 
-    .block .text p {
-      margin-bottom: 24px;
-      color: #ddd;
-    }
+    .block .text p { margin-bottom: 16px; color: #ddd; }
 
-    .block .text p:last-child { margin-bottom: 0; }
-
-    /* ── Standalone full-width images ── */
-    .block.full {
-      justify-content: center;
-      margin-bottom: 80px;
-    }
-
-    .block.full > img {
-      width: 100%;
-      flex: none;
-      min-height: unset;
-      height: 600px;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* ── You may also like ── */
     .also-like { margin-top: 80px; }
 
     .also-like h2 {
@@ -125,7 +106,7 @@
 
     .also-grid img {
       width: 100%;
-      height: 260px;
+      height: 200px;
       object-fit: cover;
       display: block;
       transition: opacity 0.2s;
@@ -133,18 +114,15 @@
 
     .also-grid img:hover { opacity: 0.8; }
 
-    /* ── Mobile ── */
-    @media (max-width: 900px) {
-      main { padding: 40px 24px 80px; }
+    @media (max-width: 700px) {
       .block, .block.reverse { flex-direction: column; }
-      .block > img, .block .text { width: 100%; flex: none; min-height: unset; }
-      .block.full > img { height: 320px; }
+      .block img { width: 100%; max-width: 100%; }
+      .block.full img { width: 100%; }
       .also-grid { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-
   <nav>
     <a href="index.html">Welcome</a>
     <a href="about.html">About me</a>
@@ -152,45 +130,65 @@
   </nav>
 
   <main>
-    <h1 class="page-title">The Peregrine</h1>
+    <h1 class="page-title">Concept Rescue Drone</h1>
 
     <!-- Block 1: image left, text right -->
     <div class="block">
-      <img src="images/peregrine-city.jpg" alt="Peregrine flying over city" />
+      <img src="images/drone-perspective.jpg" alt="Drone perspective view" />
       <div class="text">
-        <p>The Peregrine is a concept aircraft designed by me and my 5 other Aerospace Engineering colleagues.</p>
+        <p>This is a small project for my Mechanical Drawing class in Fall 2024.</p>
+        <p>My task was to 3D design an octo-rotor drone that is capable of carrying 2 different cameras, as well as 4 different sensors.</p>
+        <p>The purpose of the drone is to do rescue and surveillance missions. In more depth, the drone is installed with 2 cameras, one provides real images while the other provides thermal images.</p>
       </div>
     </div>
 
     <!-- Block 2: image left, text right -->
     <div class="block">
-      <img src="images/peregrine-clouds.jpg" alt="Peregrine above clouds" />
+      <img src="images/drone-perspective2.jpg" alt="Drone second perspective" />
       <div class="text">
-        <p>This aircraft is a business turboprop designed for the European market, with a maximum range of 1400 km and a top speed of 560 km/h.</p>
+        <p>There are 4 different sensors available: 2 anti-collision sensors, 1 altimeter, 1 GPS, and 1 humidity sensor, which could be used to predict wildfire.</p>
       </div>
     </div>
 
     <!-- Block 3: image left, text right -->
     <div class="block">
-      <img src="images/peregrine-sunset.jpg" alt="Peregrine at sunset" />
+      <img src="images/drone-top.jpg" alt="Drone top view" />
       <div class="text">
-        <p>The Peregrine has a wingspan of 17m and a total length of 15.3m.</p>
-        <p>An MTOW of 4.9 tons allows the Peregrine to carry 9 passengers.</p>
-        <p>The twin turboprop engines can deliver 1700 shaft horsepower.</p>
+        <p>The design allows the main body to have more space on the bottom since the drone doesn't require a landing gear, as well as with the huge amount of lift generated by 8 brushless motors, the drone could be equipped with larger cameras if needed.</p>
       </div>
     </div>
 
-    <!-- Standalone image -->
+    <!-- Block 4: full-width image, no text (front underside view) -->
     <div class="block full">
-      <img src="images/peregrine-above.jpg" alt="Peregrine aerial view" />
+      <img src="images/drone-front-under.jpg" alt="Drone front underside view" />
+    </div>
+
+    <!-- Block 5: full-width image (front view dark bg) -->
+    <div class="block full">
+      <img src="images/drone-front.jpg" alt="Drone front view" />
+    </div>
+
+    <!-- Block 6: full-width image (side front view) -->
+    <div class="block full">
+      <img src="images/drone-side-front.jpg" alt="Drone side front view" />
+    </div>
+
+    <!-- Block 7: full-width image (rear underside) -->
+    <div class="block full">
+      <img src="images/drone-rear-under.jpg" alt="Drone rear underside view" />
+    </div>
+
+    <!-- Block 8: full-width image (front camera view) -->
+    <div class="block full">
+      <img src="images/drone-camera-front.jpg" alt="Drone front camera view" />
     </div>
 
     <!-- You may also like -->
     <div class="also-like">
       <h2>You may also like</h2>
       <div class="also-grid">
-        <a href="project-drone.html">
-          <img src="images/drone-perspective.jpg" alt="Concept Rescue Drone" />
+        <a href="project-peregrine.html">
+          <img src="images/peregrine-main.jpg" alt="The Peregrine" />
         </a>
         <a href="project-tev.html">
           <img src="images/tev-main.jpg" alt="Thermal Electric Vehicle" />
