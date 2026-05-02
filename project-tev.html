@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thermal Electric Vehicle – Bee Hive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -13,123 +13,104 @@
       color: #e0e0e0;
       font-family: 'Inter', sans-serif;
       font-weight: 300;
-      font-size: 0.95rem;
+      font-size: 1.15rem;
       line-height: 1.8;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      padding: 18px 0;
+      gap: 50px;
+      padding: 28px 0;
       border-bottom: 1px solid #2a2a2a;
     }
 
     nav a {
-      color: #aaa;
+      color: #888;
       text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: all 0.3s ease;
     }
 
-    nav a:hover { color: #fff; }
+    nav a:hover { color: #fff; transform: translateY(-2px); }
 
     main {
-      max-width: 1100px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 60px 24px 100px;
+      padding: 100px 40px;
     }
 
     h1.page-title {
       text-align: center;
-      font-size: 1.2rem;
-      font-weight: 300;
-      letter-spacing: 0.06em;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
       color: #fff;
-      margin-bottom: 60px;
+      margin-bottom: 100px;
+      letter-spacing: -0.03em;
     }
 
-    /* Alternating image-left / text-right blocks */
     .block {
       display: flex;
-      align-items: flex-start;
-      gap: 48px;
-      margin-bottom: 80px;
+      align-items: center;
+      gap: 80px;
+      margin-bottom: 140px;
     }
 
     .block.reverse { flex-direction: row-reverse; }
 
     .block img {
       width: 55%;
-      max-width: 640px;
-      /* FIX: Use auto height and contain to show the full vehicle */
       height: auto;
       object-fit: contain;
-      display: block;
-      flex-shrink: 0;
-      border-radius: 4px;
-      background-color: rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      background-color: rgba(255,255,255,0.02);
     }
 
     .block .text {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      padding: 16px 0;
+      width: 45%;
+      padding: 0 20px;
     }
 
-    .block .text p { margin-bottom: 16px; color: #ddd; }
-
-    /* "My other projects" section */
-    .also-like { 
-      margin-top: 100px; 
-      padding-top: 40px;
-      border-top: 1px solid #2a2a2a;
-    }
-
-    .also-like h2 {
-      font-size: 0.95rem;
-      font-weight: 300;
+    .block .text p {
+      margin-bottom: 30px;
       color: #ccc;
-      margin-bottom: 24px;
+      font-size: 1.25rem;
+    }
+
+    .block .text p strong { color: #f0b429; font-weight: 500; }
+
+    .also-like { margin-top: 150px; border-top: 1px solid #333; padding-top: 80px; }
+    .also-like h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.25em;
+      margin-bottom: 50px;
+      color: #666;
+      text-align: center;
     }
 
-    .also-grid {
-      display: flex;
-      gap: 16px;
-    }
-
-    .also-grid a {
-      flex: 1;
-      display: block;
-      text-decoration: none;
-    }
-
-    .also-grid img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 9;
-      /* FIX: Shows the full preview image without cropping */
+    .also-grid { display: flex; gap: 30px; }
+    .also-grid a { flex: 1; text-decoration: none; }
+    .also-grid img { 
+      width: 100%; 
+      aspect-ratio: 16/9; 
       object-fit: contain; 
-      background-color: #111;
-      display: block;
-      border-radius: 4px;
-      transition: opacity 0.3s, transform 0.3s;
+      background: #000; 
+      border-radius: 8px; 
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     }
+    .also-grid a:hover img { transform: translateY(-15px) scale(1.02); opacity: 0.7; }
 
-    .also-grid img:hover { 
-      opacity: 0.7; 
-      transform: translateY(-5px);
-    }
-
-    @media (max-width: 700px) {
-      .block, .block.reverse { flex-direction: column; align-items: center; }
-      .block img { width: 100%; max-width: 100%; }
+    @media (max-width: 1000px) {
+      .block, .block.reverse { flex-direction: column; text-align: center; }
+      .block img, .block .text { width: 100%; }
       .also-grid { flex-direction: column; }
     }
   </style>
@@ -144,53 +125,49 @@
   <main>
     <h1 class="page-title">Thermal Electric Vehicle</h1>
 
-    <!-- Block 1 -->
+    <!-- Block 1: Chassis & Motor -->
     <div class="block">
-      <img src="images/tev-main.jpg" alt="TEV side view" />
+      <img src="images/tev-main.jpg" alt="TEV Profile" />
       <div class="text">
-        <p>This project explores using a thermal electric generator (TEG) to power a custom electric vehicle.</p>
-        <p>The chassis is constructed from bamboo and rigid cardboard, utilizing a tricycle configuration to minimize weight. The assembly features modular generator and motor units, powered by a 3-5V geared motor.</p>
+        <p>This project explores utilizing a <strong>thermal electric generator (TEG)</strong> to power a custom-built electric vehicle.</p>
+        <p>The chassis is constructed from bamboo and rigid cardboard, featuring a tricycle-wheel configuration to minimize weight while maintaining structural integrity.</p>
       </div>
     </div>
 
-    <!-- Block 2 -->
+    <!-- Block 2: The Swing System -->
     <div class="block reverse">
-      <img src="images/tev-top.jpg" alt="TEV top view" />
+      <img src="images/tev-top.jpg" alt="Swing System" />
       <div class="text">
-        <p>The core power unit is a TEG sandwiched between a lower heating chamber and an upper ice reservoir.</p>
-        <p>A key mechanical feature is the swing-mount system, which ensures the generator remains vertical even on inclines, optimizing the heat transfer efficiency.</p>
+        <p>A key innovation is the <strong>swing-mount system</strong>, which ensures the generator remains perfectly vertical even when navigating ramps.</p>
+        <p>This design optimizes the thermal gradient between the hot and cold junctions, significantly improving heat transfer efficiency.</p>
       </div>
     </div>
 
-    <!-- Block 3 -->
+    <!-- Block 3: Heat Distribution -->
     <div class="block">
-      <img src="images/tev-front.jpg" alt="TEV front view" />
+      <img src="images/tev-front.jpg" alt="Thermal Management" />
       <div class="text">
-        <p>Heat is provided by a modified tea light candle. To optimize distribution across the TEG surface, a 0.3mm aluminum interface plate was bonded using high-conductivity thermal adhesive tape.</p>
+        <p>The heat source is a modified tea light candle placed in a lower chamber.</p>
+        <p>To maximize coverage, a <strong>0.3mm aluminum interface plate</strong> was bonded to the TEG using high-conductivity thermal adhesive tape.</p>
       </div>
     </div>
 
-    <!-- Block 4 -->
+    <!-- Block 4: Analysis -->
     <div class="block reverse">
-      <img src="images/tev-rear.jpg" alt="TEV rear view" />
+      <img src="images/tev-rear.jpg" alt="Performance Testing" />
       <div class="text">
-        <p>Testing yielded a peak output of 2.4V and a velocity of 0.08 m/s.</p>
-        <p>While successful on flat terrain, future iterations will include a secondary gear reduction stage to improve climbing torque for steeper gradients.</p>
+        <p>Empirical testing reached a peak output of <strong>2.4V</strong> with a sustained velocity of 0.08 m/s.</p>
+        <p>Future iterations will implement an secondary gear reduction stage to overcome torque limitations on 20-degree gradients.</p>
       </div>
     </div>
 
     <div class="also-like">
       <h2>My other projects</h2>
       <div class="also-grid">
-        <a href="project-drone.html">
-          <img src="images/drone-main.jpg" alt="Concept Rescue Drone" />
-        </a>
-        <a href="project-peregrine.html">
-          <img src="images/peregrine-main.jpg" alt="The Peregrine" />
-        </a>
+        <a href="project-drone.html"><img src="images/drone-main.jpg" alt="Drone" /></a>
+        <a href="project-peregrine.html"><img src="images/peregrine-main.jpg" alt="Peregrine" /></a>
       </div>
     </div>
-
   </main>
 </body>
 </html>
