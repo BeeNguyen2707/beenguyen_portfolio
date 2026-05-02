@@ -9,16 +9,17 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
+   body {
       min-height: 100vh;
       background-color: #0a1628;
-      /* STACKED BACKGROUND: Logo is listed first so it sits on TOP of the gradient */
+      
+      /* 1. Change .png to .jpg here */
       background-image: 
-        url('images/bee-logo.png'), 
+        url('images/bee-logo.jpg'), 
         linear-gradient(135deg, #0d1f3c 0%, #0a1628 40%, #0d2444 70%, #0a1628 100%);
       
-      /* Background settings to ensure it looks professional */
-      background-size: contain, cover; /* Logo stays its size, gradient covers the screen */
+      /* 2. Use 'cover' for both if the bee-logo is a full-page image */
+      background-size: cover; 
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -27,8 +28,6 @@
       align-items: center;
       justify-content: center;
       font-family: 'Inter', sans-serif;
-      
-      /* Changed to auto so you can scroll on smaller mobile screens */
       overflow-y: auto; 
     }
 
