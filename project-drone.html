@@ -36,9 +36,9 @@
     nav a:hover { color: #fff; }
 
     main {
-      max-width: 1100px;
+      max-width: 1600px;
       margin: 0 auto;
-      padding: 60px 24px 100px;
+      padding: 60px 60px 100px;
     }
 
     h1.page-title {
@@ -50,39 +50,54 @@
       margin-bottom: 60px;
     }
 
+    /* Image + text blocks: each side exactly 50% */
     .block {
       display: flex;
       align-items: center;
-      gap: 48px;
-      margin-bottom: 64px;
+      margin-bottom: 80px;
     }
 
     .block.reverse { flex-direction: row-reverse; }
 
     .block img {
-      width: 55%;
-      max-width: 640px;
-      object-fit: cover;
+      width: 50%;
+      flex: 0 0 50%;
       display: block;
-      flex-shrink: 0;
-    }
-
-    /* Some drone images are full-width (no text beside them) */
-    .block.full img {
-      width: 70%;
-      margin: 0 auto;
+      object-fit: cover;
+      min-height: 480px;
     }
 
     .block .text {
-      flex: 1;
+      width: 50%;
+      flex: 0 0 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      padding: 16px 0;
+      padding: 40px 64px;
+      font-size: 1.05rem;
     }
 
-    .block .text p { margin-bottom: 16px; color: #ddd; }
+    .block .text p {
+      margin-bottom: 28px;
+      color: #ddd;
+    }
+
+    .block .text p:last-child { margin-bottom: 0; }
+
+    /* Standalone images: full width of container, tall */
+    .block.full {
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    .block.full img {
+      width: 100%;
+      flex: none;
+      height: 600px;
+      object-fit: cover;
+      display: block;
+    }
 
     .also-like { margin-top: 80px; }
 
@@ -106,7 +121,7 @@
 
     .also-grid img {
       width: 100%;
-      height: 200px;
+      height: 260px;
       object-fit: cover;
       display: block;
       transition: opacity 0.2s;
@@ -114,10 +129,11 @@
 
     .also-grid img:hover { opacity: 0.8; }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
+      main { padding: 40px 24px 80px; }
       .block, .block.reverse { flex-direction: column; }
-      .block img { width: 100%; max-width: 100%; }
-      .block.full img { width: 100%; }
+      .block img, .block .text { width: 100%; flex: none; min-height: unset; }
+      .block.full img { height: 320px; }
       .also-grid { flex-direction: column; }
     }
   </style>
@@ -132,25 +148,25 @@
   <main>
     <h1 class="page-title">Concept Rescue Drone</h1>
 
-    <!-- Block 1: image left, text right -->
+    <!-- Block 1: image left (50%), text right (50%) -->
     <div class="block">
       <img src="images/drone-perspective.jpg" alt="Drone perspective view" />
       <div class="text">
         <p>This is a small project for my Mechanical Drawing class in Fall 2024.</p>
         <p>My task was to 3D design an octo-rotor drone that is capable of carrying 2 different cameras, as well as 4 different sensors.</p>
-        <p>The purpose of the drone is to do rescue and surveillance missions. In more depth, the drone is installed with 2 cameras, one provides real images while the other provides thermal images.</p>
+        <p>The purpose of the drone is to do rescue and surveillance missions. In more depth, the drone is installed with 2 cameras: one provides real images while the other provides thermal images.</p>
       </div>
     </div>
 
-    <!-- Block 2: image left, text right -->
-    <div class="block">
+    <!-- Block 2: text left (50%), image right (50%) -->
+    <div class="block reverse">
       <img src="images/drone-perspective2.jpg" alt="Drone second perspective" />
       <div class="text">
         <p>There are 4 different sensors available: 2 anti-collision sensors, 1 altimeter, 1 GPS, and 1 humidity sensor, which could be used to predict wildfire.</p>
       </div>
     </div>
 
-    <!-- Block 3: image left, text right -->
+    <!-- Block 3: image left (50%), text right (50%) -->
     <div class="block">
       <img src="images/drone-top.jpg" alt="Drone top view" />
       <div class="text">
@@ -158,27 +174,23 @@
       </div>
     </div>
 
-    <!-- Block 4: full-width image, no text (front underside view) -->
+    <!-- Standalone images: full width, 600px tall -->
     <div class="block full">
       <img src="images/drone-front-under.jpg" alt="Drone front underside view" />
     </div>
 
-    <!-- Block 5: full-width image (front view dark bg) -->
     <div class="block full">
       <img src="images/drone-front.jpg" alt="Drone front view" />
     </div>
 
-    <!-- Block 6: full-width image (side front view) -->
     <div class="block full">
       <img src="images/drone-side-front.jpg" alt="Drone side front view" />
     </div>
 
-    <!-- Block 7: full-width image (rear underside) -->
     <div class="block full">
       <img src="images/drone-rear-under.jpg" alt="Drone rear underside view" />
     </div>
 
-    <!-- Block 8: full-width image (front camera view) -->
     <div class="block full">
       <img src="images/drone-camera-front.jpg" alt="Drone front camera view" />
     </div>
