@@ -6,7 +6,6 @@
   <title>The Peregrine – Bee Hive</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* Using the exact same styling as TEV for professional consistency */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background-color: #1a1a1a; color: #e0e0e0; font-family: 'Inter', sans-serif; font-weight: 300; font-size: 1.15rem; line-height: 1.8; }
     nav { display: flex; justify-content: center; gap: 50px; padding: 28px 0; border-bottom: 1px solid #2a2a2a; }
@@ -17,8 +16,9 @@
     .block { display: flex; align-items: center; gap: 80px; margin-bottom: 140px; }
     .block.reverse { flex-direction: row-reverse; }
     .block img { width: 55%; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 25px 60px rgba(0,0,0,0.6); }
-    .block .text { width: 45%; padding: 0 20px; }
+    .block .text { width: 45%; padding: 0 20px; text-align: center; }
     .block .text p { margin-bottom: 30px; color: #ccc; font-size: 1.25rem; }
+    .block .text p strong { color: #f0b429; font-weight: 500; }
     .block.full { margin-bottom: 140px; }
     .block.full img { width: 100%; height: auto; max-height: 85vh; object-fit: contain; border-radius: 12px; }
     .also-like { margin-top: 150px; border-top: 1px solid #333; padding-top: 80px; }
@@ -36,40 +36,29 @@
     <a href="about.html">About me</a>
     <a href="projects.html">My projects</a>
   </nav>
-
   <main>
     <h1 class="page-title">The Peregrine</h1>
-
-    <!-- Block 1: The Design Team -->
     <div class="block">
-      <img src="images/peregrine-city.jpg" alt="Peregrine Design" />
+      <img src="images/peregrine-city.jpg" alt="Peregrine flight" />
       <div class="text">
-        <p>The Peregrine is a high-performance concept aircraft designed as a collaborative effort by a team of <strong>six Aerospace Engineering colleagues</strong>.</p>
+        <p>The Peregrine is a concept aircraft designed by me and my <strong>5 other Aerospace Engineering colleagues</strong>.</p>
       </div>
     </div>
-
-    <!-- Block 2: Market & Speed -->
     <div class="block reverse">
-      <img src="images/peregrine-clouds.jpg" alt="Performance" />
+      <img src="images/peregrine-clouds.jpg" alt="Atmospheric view" />
       <div class="text">
-        <p>Tailored for the European business market, this turboprop features a <strong>1400 km range</strong> and a top speed of 560 km/h.</p>
+        <p>This aircraft is a <strong>business turboprop</strong> designed for the European market, with a maximum range of <strong>1400 km</strong> and a top speed of <strong>560 km/h</strong>.</p>
       </div>
     </div>
-
-    <!-- Block 3: Specs -->
     <div class="block">
-      <img src="images/peregrine-sunset.jpg" alt="Specifications" />
+      <img src="images/peregrine-sunset.jpg" alt="Technical Specs" />
       <div class="text">
-        <p>With a 17m wingspan and an <strong>MTOW of 4.9 tons</strong>, the aircraft is engineered to comfortably carry 9 passengers.</p>
-        <p>Power is delivered via twin turboprop engines producing 1700 shaft horsepower.</p>
+        <p>The Peregrine has a wingspan of <strong>17m</strong> and a total length of <strong>15.3m</strong>.</p>
+        <p>An <strong>MTOW of 4.9 tons</strong> allows the Peregrine to carry <strong>9 passengers</strong>.</p>
+        <p>The twin turboprop engines can deliver <strong>1700 shaft horsepower</strong>.</p>
       </div>
     </div>
-
-    <!-- Full Width Render -->
-    <div class="block full">
-      <img src="images/peregrine-above.jpg" alt="Peregrine Aerial" />
-    </div>
-
+    <div class="block full"><img src="images/peregrine-above.jpg" alt="Aerial render" /></div>
     <div class="also-like">
       <h2>My other projects</h2>
       <div class="also-grid">
